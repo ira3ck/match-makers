@@ -1,70 +1,27 @@
-# Getting Started with Create React App
+# MatchMakers
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+<h4>INTEGRANTES</h4>
+<ul>Irack Francisco Alanís Irigoyen     1802401</ul>
+<ul>Daniel Alejandro Jacobo Hernández   1819714</ul>
+<ul>José Manuel Zúñiga Vera             1810254</ul>
+<ul>Jesús Antonio Martínez Rodríguez    1672363</ul>
 
-## Available Scripts
+<h2>MatchMakers</h2>
 
-In the project directory, you can run:
+<p>Se trata de una aplicación web que sirve como una especie de red social/sitio de posts en los que los usuarios pueden publicar abiertamente o en grupos específicos (Squads), peticiones que buscan encontrar en lapsos cortos a otras personas para jugar partidas online.
+Esta aplicación busca reunir a jugadores con gustos afines a encontrar partidas durante los momentos del día en los que ellos juegan.
+Se le proporciona a los usuarios un perfil en el que pueden expresar sus preferencias en cuestión de videojuegos para que puedan mostrarle a quienes quieran qué clase de jugadores son.</p>
 
-### `yarn start`
+<p>Además se cuenta con un sistema de calificaciones a usuarios en los que aquellos jugadores con los que se haya compartido partida puedan calificar y dar su opinión con respecto a sus compañeros, esto con el fin de crear un sistema de honor donde los jugadores que traten a sus compañeros con respeto sean recompensados mientras que los que no, se verá reflejado.</p>
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
-
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
-
-### `yarn test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `yarn build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `yarn eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `yarn build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+<h3>Carpetas<h3>
+<ul>Raíz
+  <ul>
+    <li>src</li>
+    <ul>
+      <li>controllers - Se contienen los archivos que indican los procedimientos propios de una tabla de la base de datos.</li>
+      <li><strong>models</strong> - Aquí están los archivos que representan las tablas de la base de datos.</li>
+      <li>routes - Los archivos de esta carpeta son los que dirigen las interacciones de la página web a con las tablas de la base de datos.</li>
+    </ul>
+  </ul>
+</ul>
