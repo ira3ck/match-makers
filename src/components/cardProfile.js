@@ -1,6 +1,6 @@
 import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
-import { Avatar, Badge, Button, Card, Grid, Grow, Paper, Switch, Typography } from '@material-ui/core';
+import { Avatar, Badge, Button, Grid, Paper, Typography } from '@material-ui/core';
 
 const useStyles = makeStyles((theme) => ({
     tarjeta: {
@@ -29,11 +29,6 @@ const useStyles = makeStyles((theme) => ({
 
 export default function CardProfile() {
     const classes = useStyles();
-    const [checked, setChecked] = React.useState(false);
-
-    const handleChange = () => {
-        setChecked((prev) => !prev);
-    };
 
     return (
         <Paper className={classes.tarjeta}>

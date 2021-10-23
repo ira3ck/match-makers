@@ -1,11 +1,11 @@
 import React, { Fragment } from 'react'
-import { AppBar, Container, makeStyles, Toolbar, Typography } from '@material-ui/core';
+import { Container, makeStyles } from '@material-ui/core';
 import PrimarySearchAppBar from '../components/primaryNavbar'
 import Posteo from '../components/posteo'
 
 const useStyles = makeStyles((theme) => ({
     espacio: {
-        marginTop: theme.spacing(5),
+        marginTop: theme.spacing(3),
     },
 }));
 
