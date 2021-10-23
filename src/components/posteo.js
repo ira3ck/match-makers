@@ -14,7 +14,7 @@ import ShareIcon from '@material-ui/icons/Share';
 export default function RecipeReviewCard() {
 
   return (
-    <Card style={{ width: '60rem', backgroundColor: '#dcd1f0', padding: '10px', borderRadius: 10}}>
+    <Card style={{ width: '100%', backgroundColor: '#e2e2f7', padding: '10px', borderRadius: 10}}>
       <Typography component="p" style={{ padding: '5px' }}>
         Tipo de juego, Nombre del juego
       </Typography>
@@ -30,10 +30,10 @@ export default function RecipeReviewCard() {
         }
         title="Username"
         subheader="SuperMegasquad"
-        style={{ backgroundColor: '#9f82d9', width: '20rem', borderRadius: 10 }}
+        style={{ backgroundColor: '#525570', width: '20rem', borderRadius: 10, color: 'aliceblue' }}
       />
       <CardContent>
-        <Typography variant="body2" color="textSecondary" component="p">
+        <Typography variant="body2" color="textPrimary" component="p">
           Hola, Gamer, juguemos League of Legends
 
           ¿Qué te parece si lo descargamos en este preciso momento y descubrimos juntos como se juega?

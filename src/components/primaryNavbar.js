@@ -119,7 +119,7 @@ export default function PrimarySearchAppBar() {
       onClose={handleMenuClose}
     >
       <MenuItem onClick={handleMenuClose}>Perfil</MenuItem>
-      <MenuItem onClick={handleMenuClose}>Ajustes</MenuItem>
+      {/*<MenuItem onClick={handleMenuClose}>Ajustes</MenuItem>*/}
     </Menu>
   );
 
