@@ -5,9 +5,8 @@ import PrimarySearchAppBar from '../components/primaryNavbar';
 const index = () => {
     return (
         <Fragment>
-            <PrimarySearchAppBar/>
+            <PrimarySearchAppBar />
             <Container>
-
             </Container>
         </Fragment>
 

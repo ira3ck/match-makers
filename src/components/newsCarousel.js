@@ -7,7 +7,7 @@ const newsCarousel = (props) => {
         {
             name: "Random Name #1",
             description: "Probably the most random thing you have ever seen!",
-            image: "./public/img/654978.jpg"
+            image: "http://vignette1.wikia.nocookie.net/ssbb/images/d/db/Young_Link_Ocarina_of_Time.png/revision/latest/scale-to-width-down/2000?cb=20120904194623&path-prefix=es"
         },
         {
             name: "Random Name #2",
