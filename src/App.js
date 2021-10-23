@@ -5,6 +5,7 @@ import Index from "./pages";
 import profile from "./pages/profile";
 import SignIn from "./pages/sign-in";
 import SignUp from "./pages/sign-up";
+import squad from "./pages/squad";
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
         <Route exact path="/profile" component={profile} />
         <Route exact path="/sign-in" component={SignIn} />
         <Route exact path="/sign-up" component={SignUp} />
+        <Route exact path="/squad" component={squad} />
       </Switch>
     </Router>
   );

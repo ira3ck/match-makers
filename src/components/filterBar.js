@@ -16,6 +16,7 @@ import TextField from "@material-ui/core/TextField";
 const useStyles = makeStyles((theme) => ({
   root: {
     display: "flex",
+    color: 'aliceblue',
     flexWrap: "wrap",
     "& > *": {
       margin: theme.spacing(5),
@@ -28,6 +29,7 @@ const useStyles = makeStyles((theme) => ({
     textAlign: "left",
     maxWidth: 500,
     fontSize: 50,
+    color: 'white',
   },
   paper: {
     padding: theme.spacing(2),
@@ -38,6 +40,7 @@ const useStyles = makeStyles((theme) => ({
   formControl: {
     margin: theme.spacing(2),
     minWidth: 120,
+    color: 'aliceblue',
   },
   selectEmpty: {
     marginTop: theme.spacing(2),
@@ -54,7 +57,7 @@ export default function FilterBar() {
 
   return (
     <div className={classes.root}>
-      <Paper elevation={3} className={classes.paper}>
+      <Paper elevation={3} className={classes.paper} style = {{ borderRadius: 30, backgroundColor: '#5d5a63'}}>
         <Grid item xs container direction="column" spacing={2}>
           <Typography
             gutterBottom
