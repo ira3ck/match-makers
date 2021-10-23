@@ -1,4 +1,4 @@
-yarn starconst express = require("express");
+const express = require("express");
 const bodyParser = require("body-parser");
 require("./src/models/connection");
 /* requires de rutas */
