@@ -5,8 +5,8 @@ import { Avatar, Badge, Button, Grid, Paper, Typography } from '@material-ui/cor
 const useStyles = makeStyles((theme) => ({
     tarjeta: {
         marginTop: '3rem',
-        backgroundColor: '#323232',
-        //opacity: '60%',
+        backgroundColor: 'rgba(50, 50, 50, 0.5)',
+        borderRadius: '20px',
         padding: theme.spacing(2),
         color: 'aliceblue',
     },

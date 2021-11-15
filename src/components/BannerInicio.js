@@ -1,12 +1,18 @@
-import { Container, Typography } from '@material-ui/core';
 import React from 'react'
-import Avatar from '@material-ui/core/Avatar';
+import { makeStyles } from '@material-ui/core';
 
-const integrantesSquad = (x) => {
+const useStyles = makeStyles((theme) => ({
+    bannerIMG: {
+        width: "100%",
+        heigh: "auto",
+    },
+}));
+
+const BannerSquad = () => {
+    const classes = useStyles();
     return (
-        <img src='../img/baner_inicio2.PNG' />
-            
+        <img className={classes.bannerIMG} src='../img/baner_inicio2.PNG' alt="banner"/>
     )
 }
 
-export default integrantesSquad;
+export default BannerSquad;

@@ -8,29 +8,58 @@ import IconButton from '@material-ui/core/IconButton';
 import Typography from '@material-ui/core/Typography';
 import FavoriteIcon from '@material-ui/icons/Favorite';
 import ShareIcon from '@material-ui/icons/Share';
+import { makeStyles } from '@material-ui/core';
 
-
+const useStyles = makeStyles((theme) => ({
+  espacio: {
+    marginTop: theme.spacing(3),
+  },
+  content: {
+    width: '100%',
+    paddingRight: theme.spacing(3),
+    paddingLeft: theme.spacing(3),
+    paddingTop: theme.spacing(3),
+    borderRadius: 10
+  },
+  gameData: {
+    padding: '5px'
+  },
+  fecha: {
+    padding: '5px',
+    display: 'flex',
+    justifyContent: 'flex-end'
+  },
+  cardHeder: {
+    backgroundColor: '#525570',
+    width: '20rem',
+    borderRadius: 10,
+  },
+  subColor: {
+    color: 'aliceblue',
+    fontSize: 'small'
+  },
+  iconBTN: {
+    fill: '#fff',
+  },
+}));
 
 export default function RecipeReviewCard() {
-
+  const classes = useStyles();
   return (
-    <Card style={{ width: '100%', backgroundColor: '#e2e2f7', padding: '10px', borderRadius: 10}}>
-      <Typography component="p" style={{ padding: '5px' }}>
+    <Card className={classes.content}>
+      <Typography component="p" className={classes.gameData}>
         Tipo de juego, Nombre del juego
       </Typography>
-      <Typography component="p" style={{ padding: '5px', display: 'flex', justifyContent: 'flex-end' }}>
+      <Typography component="p" className={classes.gameData}>
         octubre 10 del 2021
       </Typography>
       <CardHeader
-
         avatar={
-
           <Avatar src="https://pbs.twimg.com/media/EiNYM5CWAAAh9PV?format=png&name=240x240" />
-
         }
         title="Username"
-        subheader="SuperMegasquad"
-        style={{ backgroundColor: '#525570', width: '20rem', borderRadius: 10, color: 'aliceblue' }}
+        subheader={<Typography className={classes.subColor}>Supermegasquad</Typography>}
+        className={classes.cardHeder}
       />
       <CardContent>
         <Typography variant="body2" color="textPrimary" component="p">
@@ -51,10 +80,10 @@ export default function RecipeReviewCard() {
       </CardContent>
       <CardActions disableSpacing>
         <IconButton aria-label="add to favorites">
-          <FavoriteIcon />
+          <FavoriteIcon  className={classes.iconBTN}/>
         </IconButton>
         <IconButton aria-label="share">
-          <ShareIcon />
+          <ShareIcon   className={classes.iconBTN}/>
         </IconButton>
       </CardActions>
     </Card>
