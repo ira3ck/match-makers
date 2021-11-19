@@ -27,7 +27,7 @@ const useStyles = makeStyles((theme) => ({
     },
 }));
 
-export default function CardProfile() {
+export default function CardProfile({data}) {
     const classes = useStyles();
 
     return (
@@ -43,7 +43,7 @@ export default function CardProfile() {
                             vertical: 'bottom',
                             horizontal: 'left',
                         }}>
-                        <Avatar alt="Invitado" src="../img/654978.jpg" className={classes.large} />
+                        <Avatar alt="Invitado" src={data.profile_pic} className={classes.large} />
                     </Badge>
                 </Grid>
 
@@ -57,14 +57,14 @@ export default function CardProfile() {
                     <Grid item
                         justifyContent="flex-end">
                         <Typography variant="h3">
-                            ira3ck
+                            {data.name}
                         </Typography>
                     </Grid>
                     <Grid item>
                         <div className={classes.alineadoDerecha}>
                             <Button>
                                 <Typography variant="h6" className={classes.squadButton}>
-                                    Supermegasquad
+                                    {data.squad_name}
                                 </Typography>
                             </Button>
                         </div>
@@ -73,7 +73,7 @@ export default function CardProfile() {
                         <p className={classes.squadButton}>
                             Descripción
                         </p>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Pellentesque diam volutpat commodo sed egestas egestas fringilla.</p>
+                        <p>{data.desc}</p>
                     </Grid>
                 </Grid>
             </Grid>

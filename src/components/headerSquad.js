@@ -1,11 +1,9 @@
 import React, { Fragment } from 'react';
 import { makeStyles } from '@material-ui/core/styles';
-import Card from '@material-ui/core/Card';
-import CardContent from '@material-ui/core/CardContent';
 import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
 import Grid from '@material-ui/core/Grid';
-import { Avatar, Box } from '@material-ui/core';
+import { Box } from '@material-ui/core';
 
 const useStyles = makeStyles((theme) => ({
   alineadoDer: {
@@ -19,6 +17,7 @@ const useStyles = makeStyles((theme) => ({
   root: {
     maxWidth: 1920,
     marginTop: theme.spacing(2),
+    marginBottom: theme.spacing(2),
     backgroundColor: "rgba(50,50,50,0.75)",
     color: 'aliceblue',
     borderRadius: '20px',
@@ -56,7 +55,7 @@ const useStyles = makeStyles((theme) => ({
   }
 }));
 
-export default function MediaCard() {
+export default function MediaCard({data}) {
   const classes = useStyles();
 
   return (
@@ -67,14 +66,10 @@ export default function MediaCard() {
           justifyContent="space-between">
           <Grid item style={{ marginRight: "20px" }} sm={8} xs={12}>
             <Typography className={classes.descp} gutterBottom variant="h4" component="h2">
-              Supermegasquad
+              {data.squad_name}
             </Typography>
             <Typography className={classes.descp} variant="p2" color="aliceblue" component="p">
-              Somos los mas sanguinarios del frifayer, nuestro rango? la pregunta ofende nene, puro heroico en el gremio papa
-              Somos los mas sanguinarios del frifayer, nuestro rango? la pregunta ofende nene, puro heroico en el gremio papa
-              Somos los mas sanguinarios del frifayer, nuestro rango? la pregunta ofende nene, puro heroico en el gremio papa
-              Somos los mas sanguinarios del frifayer, nuestro rango? la pregunta ofende nene, puro heroico en el gremio papa
-              Somos los mas sanguinarios del frifayer, nuestro rango? la pregunta ofende nene, puro heroico en el gremio papa
+              {data.desc}
             </Typography>
             <Grid container>
               <Grid item>
@@ -90,7 +85,7 @@ export default function MediaCard() {
             </Grid>
           </Grid>
           <Grid item sm={3} xs={12}>
-            <Box component="div" className={classes.squadIMG}></Box>
+            <Box component="div" className={classes.squadIMG} style={{backgroundImage: `url( ${data.squad_pic}) `}}></Box>
           </Grid>
         </Grid>
       </Box>
