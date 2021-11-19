@@ -17,7 +17,7 @@ import TextField from "@material-ui/core/TextField";
 const useStyles = makeStyles((theme) => ({
   root: {
     display: "flex",
-    color: 'aliceblue',
+    color: "aliceblue",
     flexWrap: "wrap",
     "& > *": {
       margin: theme.spacing(5),
@@ -30,12 +30,13 @@ const useStyles = makeStyles((theme) => ({
     textAlign: "left",
     maxWidth: 500,
     fontSize: 50,
-    color: 'white',
+    color: "white",
   },
   paper: {
     padding: theme.spacing(2),
     display: "flex",
     flexWrap: "wrap",
+    maxHeight: "500px",
     height: 130,
   },
   formControl: {
@@ -45,13 +46,12 @@ const useStyles = makeStyles((theme) => ({
   selectEmpty: {
     marginTop: theme.spacing(2),
   },
-  selecter: {
-  },
+  selecter: {},
 }));
 
 const theme2 = createTheme({
   palette: {
-    type: 'dark',
+    type: "dark",
   },
 });
 export default function FilterBar() {
@@ -65,7 +65,11 @@ export default function FilterBar() {
   return (
     <ThemeProvider theme={theme2}>
       <div className={classes.root}>
-        <Paper elevation={3} className={classes.paper} style={{ borderRadius: 30, backgroundColor: '#5d5a63' }}>
+        <Paper
+          elevation={3}
+          className={classes.paper}
+          style={{ borderRadius: 30, backgroundColor: "#5d5a63" }}
+        >
           <Grid item xs container direction="column" spacing={2}>
             <Typography
               gutterBottom
@@ -116,11 +120,17 @@ export default function FilterBar() {
               <MenuItem value={30}>Xbox</MenuItem>
               <MenuItem value={40}>Nintendo Switch</MenuItem>
             </Select>
-            <FormHelperText className={classes.whiteText}>Plataforma en la que juega</FormHelperText>
+            <FormHelperText className={classes.whiteText}>
+              Plataforma en la que juega
+            </FormHelperText>
           </FormControl>
 
           <form className={classes.formControl} noValidate autoComplete="off">
-            <TextField id="standard-basic" label="Nivel en el Juego" className={classes.whiteText} />
+            <TextField
+              id="standard-basic"
+              label="Nivel en el Juego"
+              className={classes.whiteText}
+            />
           </form>
         </Paper>
       </div>
