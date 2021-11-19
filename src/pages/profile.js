@@ -1,15 +1,11 @@
-import { Avatar, Box, Chip, Container, Grid, makeStyles, Typography } from '@material-ui/core';
+import { Avatar, Box, Chip, Grid, makeStyles, Typography } from '@material-ui/core';
 import React, { Fragment } from 'react'
 import CardProfile from '../components/cardProfile';
 import VideoGameCard from '../components/cardVideoGame';
 import Posteo from '../components/posteo';
-import PrimarySearchAppBar from '../components/primaryNavbar';
+import Scrollable from '../components/Scrollable';
 
 const useStyles = makeStyles((theme) => ({
-    espacio: {
-        marginBottom: theme.spacing(3),
-        //marginRight: theme.spacing(4),
-    },
     alineadoDerecha: {
         display: 'flex',
         justifyContent: 'flex-end',
@@ -25,23 +21,36 @@ const useStyles = makeStyles((theme) => ({
         padding: theme.spacing(3),
     },
     BG: {
-        backgroundImage: "url(../img/k4ymjhphg9f71.png)",
         backgroundAttachment: 'fixed',
         backgroundPosition: 'center',
         backgroundRepeat: 'no - repeat',
         backgroundSize: 'cover',
-    }
+    },
 }));
 
 const Profile = () => {
 
     const classes = useStyles();
-
+    const posteo = {
+        gameType: "Tipo de juego",
+        gameName: "Nombre del juego",
+        date: "18 noviembre 2021",
+        userIMG: "https://pbs.twimg.com/media/EiNYM5CWAAAh9PV?format=png&name=240x240",
+        sqName: "Supermegasquad",
+        body: "Hola, Gamer, juguemos League of Legends ¿Qué te parece si lo descargamos en este preciso momento y descubrimos juntos como se juega? Es fácil de aprender, funciona de esta manera: 2 equipos de 5 jugadores deben destruir la base enemiga combatiendo en un mapa lleno de objetivos y monstruos. Supongamos que de entre los mas de 100 campeones Elijes a Garen, te gusta Garen, es fácil matar a tus enemigos con Garen. Al principio no necesitas ser experto por qué el juego te posiciona con otros jugadores de tu mismo nivel, esto significa que podrás mejorar con solo jugar y divertirte. No hay nada como ganar en League of Legends al lado de 4 nuevos aliados... ¿Hermoso, verdad?"
+    }
+    const profile = {
+        profile_pic: "../img/654978.jpg",
+        background_pic: "../img/k4ymjhphg9f71.png",
+        name: "ira3ck",
+        squad_name: "Supermegasquad",
+        desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis pretium nulla nec velit eleifend dictum. Nunc dignissim purus vitae nunc posuere luctus. In pulvinar, erat nec tempor feugiat, ex quam fermentum nulla, sed facilisis felis felis ac mi. Cras convallis diam nec faucibus dignissim."
+    }
     return (
-        <Box component="div" className={classes.BG}>
+        <Box component="div" className={classes.BG} style={{ backgroundImage: `url( ${profile.background_pic} )` }}>
             <Fragment>
                 <Box component="div" className={classes.content}>
-                    <CardProfile></CardProfile>
+                    <CardProfile data={profile}></CardProfile>
 
                     <Chip
                         className={classes.chipSpace}
@@ -63,16 +72,11 @@ const Profile = () => {
                     <Grid container direction="row" justifyContent="space-evenly" className={classes.spaceTop}>
 
                         <Grid item sm={8}>
-                            <div className={classes.espacio}>
-                                <Posteo></Posteo>
-                            </div>
-                            <div className={classes.espacio}>
-                                <Posteo></Posteo>
-                            </div>
-                            <div className={classes.espacio}>
-                                <Posteo></Posteo>
-                            </div>
-
+                            <Scrollable>
+                                <Posteo posteo={posteo}></Posteo>
+                                <Posteo posteo={posteo}></Posteo>
+                                <Posteo posteo={posteo}></Posteo>
+                            </Scrollable>
                         </Grid>
 
                         <Grid item>

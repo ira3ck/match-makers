@@ -10,8 +10,6 @@ import MenuItem from "@material-ui/core/MenuItem";
 import FormHelperText from "@material-ui/core/FormHelperText";
 import FormControl from "@material-ui/core/FormControl";
 import Select from "@material-ui/core/Select";
-import { createTheme, ThemeProvider } from "@material-ui/core";
-
 import TextField from "@material-ui/core/TextField";
 
 const useStyles = makeStyles((theme) => ({
@@ -49,11 +47,6 @@ const useStyles = makeStyles((theme) => ({
   selecter: {},
 }));
 
-const theme2 = createTheme({
-  palette: {
-    type: "dark",
-  },
-});
 export default function FilterBar() {
   const classes = useStyles();
   const [game, setGame] = React.useState("");
@@ -69,7 +62,6 @@ export default function FilterBar() {
   };
 
   return (
-    <ThemeProvider theme={theme2}>
       <div className={classes.root}>
         <Paper
           elevation={3}
@@ -140,6 +132,5 @@ export default function FilterBar() {
           </form>
         </Paper>
       </div>
-    </ThemeProvider>
   );
 }

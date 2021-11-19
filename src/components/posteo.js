@@ -19,9 +19,10 @@ const useStyles = makeStyles((theme) => ({
     paddingRight: theme.spacing(3),
     paddingLeft: theme.spacing(3),
     paddingTop: theme.spacing(3),
-    borderRadius: 10
+    marginBottom: '10px',
+    borderRadius: 10,
   },
-  gameData: {
+  gameposteo: {
     padding: '5px'
   },
   fecha: {
@@ -43,47 +44,35 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-export default function RecipeReviewCard() {
+export default function RecipeReviewCard({posteo}) {
   const classes = useStyles();
   return (
     <Card className={classes.content}>
       <Typography component="p" className={classes.gameData}>
-        Tipo de juego, Nombre del juego
+        {posteo.gameType}, {posteo.gameName}
       </Typography>
-      <Typography component="p" className={classes.gameData}>
-        octubre 10 del 2021
+      <Typography component="p" className={classes.gameposteo}>
+        {posteo.date}
       </Typography>
       <CardHeader
         avatar={
-          <Avatar src="https://pbs.twimg.com/media/EiNYM5CWAAAh9PV?format=png&name=240x240" />
+          <Avatar src={posteo.userIMG} />
         }
         title="Username"
-        subheader={<Typography className={classes.subColor}>Supermegasquad</Typography>}
+        subheader={<Typography className={classes.subColor}>{posteo.sqName}</Typography>}
         className={classes.cardHeder}
       />
       <CardContent>
         <Typography variant="body2" color="textPrimary" component="p">
-          Hola, Gamer, juguemos League of Legends
-
-          ¿Qué te parece si lo descargamos en este preciso momento y descubrimos juntos como se juega?
-
-          Es fácil de aprender, funciona de esta manera: 2 equipos de 5 jugadores deben destruir la base enemiga
-
-          combatiendo en un mapa lleno de objetivos y monstruos. Supongamos que de entre los mas de 100 campeones
-
-          Elijes a Garen, te gusta Garen, es fácil matar a tus enemigos con Garen. Al principio no necesitas ser experto
-
-          por qué el juego te posiciona con otros jugadores de tu mismo nivel, esto significa que podrás mejorar con solo
-
-          jugar y divertirte. No hay nada como ganar en League of Legends al lado de 4 nuevos aliados... ¿Hermoso, verdad?
+          {posteo.body}
         </Typography>
       </CardContent>
       <CardActions disableSpacing>
         <IconButton aria-label="add to favorites">
-          <FavoriteIcon  className={classes.iconBTN}/>
+          <FavoriteIcon className={classes.iconBTN}/>
         </IconButton>
         <IconButton aria-label="share">
-          <ShareIcon   className={classes.iconBTN}/>
+          <ShareIcon  className={classes.iconBTN}/>
         </IconButton>
       </CardActions>
     </Card>

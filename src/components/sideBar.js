@@ -85,7 +85,6 @@ export default function SideBar(props) {
                             <ListItemIcon className={classes.coloredText}><PersonOutlined /></ListItemIcon>
                             <ListItemText className={classes.coloredText} primary='Profile' />
                         </ListItem>
-
                     </List>
                 </Box>
             </Drawer>
