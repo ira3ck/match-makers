@@ -56,10 +56,16 @@ const theme2 = createTheme({
 });
 export default function FilterBar() {
   const classes = useStyles();
-  const [age, setAge] = React.useState("");
+  const [game, setGame] = React.useState("");
+
+  const [Plataforma, setPlataforma] = React.useState("");
 
   const handleChange = (event) => {
-    setAge(event.target.value);
+    setGame(event.target.value);
+  };
+
+  const handleChange2 = (event) => {
+    setPlataforma(event.target.value);
   };
 
   return (
@@ -86,16 +92,16 @@ export default function FilterBar() {
             <Select
               labelId="demo-simple-select-helper-label"
               id="demo-simple-select-helper"
-              value={age}
+              value={game}
               onChange={handleChange}
               className={classes.selecter}
             >
               <MenuItem value="">
                 <em>Ninguno</em>
               </MenuItem>
-              <MenuItem value={10}>Apex Legends</MenuItem>
-              <MenuItem value={20}>Rocket League</MenuItem>
-              <MenuItem value={30}>Warzone</MenuItem>
+              <MenuItem value={"Apex Legends"}>Apex Legends</MenuItem>
+              <MenuItem value={"Rocket League"}>Rocket League</MenuItem>
+              <MenuItem value={"Warzone"}>Warzone</MenuItem>
             </Select>
             <FormHelperText>Juego por el que desea buscar</FormHelperText>
           </FormControl>
@@ -109,16 +115,16 @@ export default function FilterBar() {
             <Select
               labelId="demo-simple-select-helper-label"
               id="demo-simple-select-helper"
-              value={age}
-              onChange={handleChange}
+              value={Plataforma}
+              onChange={handleChange2}
             >
               <MenuItem value="">
                 <em>Ninguna</em>
               </MenuItem>
-              <MenuItem value={10}>PC(Steam)</MenuItem>
-              <MenuItem value={20}>PlayStation</MenuItem>
-              <MenuItem value={30}>Xbox</MenuItem>
-              <MenuItem value={40}>Nintendo Switch</MenuItem>
+              <MenuItem value={"PC(Steam)"}>PC(Steam)</MenuItem>
+              <MenuItem value={"PlayStation"}>PlayStation</MenuItem>
+              <MenuItem value={"Xbox"}>Xbox</MenuItem>
+              <MenuItem value={"Nintendo Switch"}>Nintendo Switch</MenuItem>
             </Select>
             <FormHelperText className={classes.whiteText}>
               Plataforma en la que juega
