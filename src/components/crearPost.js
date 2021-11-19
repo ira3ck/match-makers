@@ -33,7 +33,6 @@ const CrearPost = () => {
       style={{
         width: "100%",
         margin: "10px",
-        backgroundColor: "white",
         borderRadius: "10px",
         padding: "15px",
         alignContent: "center",

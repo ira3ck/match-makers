@@ -29,8 +29,8 @@ const Index = () => {
             <Box component="div" className={classes.container}>
                 <BannerInicio></BannerInicio>
                 <Container>
-                    <FilterBar></FilterBar>
                     <CrearPost></CrearPost>
+                    <FilterBar></FilterBar>
                     <div className={classes.espacio}>
                         <Posteo posteo={posteo}></Posteo>
                     </div>
