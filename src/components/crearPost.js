@@ -10,10 +10,9 @@ import Select from "@material-ui/core/Select";
 
 import Typography from "@material-ui/core/Typography";
 import { PostAdd } from "@material-ui/icons";
-
 import Button from "@material-ui/core/Button";
 import Icon from "@material-ui/core/Icon";
-
+import { MakePosts } from "../api/MMapi";
 const useStyles = makeStyles((theme) => ({
   formControl: {
     margin: theme.spacing(1),
@@ -28,10 +27,13 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 const CrearPost = () => {
+  const  RegularFunction =  async (postSend)=>{
+    await MakePosts(postSend)
+  };
   const classes = useStyles();
 
   const [post, setPost] = useState({
-    creador: "",
+    creador: "Usuario equis",
     permanencia: "",
     juego: "",
     cuerpo: "",
@@ -47,6 +49,8 @@ const CrearPost = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+
+    RegularFunction(post)
   };
 
   return (
@@ -124,7 +128,8 @@ const CrearPost = () => {
               variant="contained"
               className={classes.button}
               endIcon={<Icon>send</Icon>}
-            >
+              type = "submit"
+            > 
               Publicar
             </Button>
           </Box>
