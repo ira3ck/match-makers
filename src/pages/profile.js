@@ -41,7 +41,7 @@ const Profile = () => {
     }
     const profile = {
         profile_pic: "../img/654978.jpg",
-        background_pic: "../img/k4ymjhphg9f71.png",
+        background_pic: "../img/bgDEFAULT.png",
         name: "ira3ck",
         squad_name: "Supermegasquad",
         desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis pretium nulla nec velit eleifend dictum. Nunc dignissim purus vitae nunc posuere luctus. In pulvinar, erat nec tempor feugiat, ex quam fermentum nulla, sed facilisis felis felis ac mi. Cras convallis diam nec faucibus dignissim."
