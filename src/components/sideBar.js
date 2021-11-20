@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { makeStyles } from "@material-ui/core/styles";
 import Drawer from "@material-ui/core/Drawer";
 import CssBaseline from "@material-ui/core/CssBaseline";
@@ -25,16 +25,10 @@ import {
     PowerSettingsNew,
     Settings,
 } from "@material-ui/icons";
+import { useAuth0 } from "../hooks/react-auth0-spa"
 
-import { create } from "../api/MMapi";
 
 const drawerWidth = 360;
-
-const RegularFunction = async () => {
-    const TestObj = { name: "irack", last_name: "alanís", username: "ira3ck", email: "ira3ck@gmail.com" };
-
-    await create(TestObj);
-};
 
 const useStyles = makeStyles((theme) => ({
     root: {
@@ -93,6 +87,12 @@ export default function SideBar(props) {
 
     const open = Boolean(anchorEl);
     const id = open ? "simple-popover" : undefined;
+
+    const { user, isAuthenticated, isLoading } = useAuth0();
+
+    if (isLoading) {
+        return <div>Loading ...</div>;
+    }
 
     return (
         <Box sx={{ display: "flex" }}>
@@ -176,12 +176,17 @@ export default function SideBar(props) {
                                     <Avatar alt="Profile Pic" src={profile.profile_pic}></Avatar>
                                 </Grid>
                                 <Grid item>
-                                    <Typography style={{ marginLeft: "15px" }}>
-                                        {profile.name}
-                                    </Typography>
-                                    <Typography style={{ marginLeft: "15px", fontSize: "small" }}>
-                                        {profile.squad}
-                                    </Typography>
+                                    {
+                                        isAuthenticated && !isLoading &&
+                                        (<div>
+                                            <Typography style={{ marginLeft: "15px" }}>
+                                                {profile.name}
+                                            </Typography>
+                                            <Typography style={{ marginLeft: "15px", fontSize: "small" }}>
+                                                {profile.squad}
+                                            </Typography>
+                                        </div>)
+                                    }
                                 </Grid>
                                 <Grid>
                                     <MoreHoriz style={{ marginLeft: "25px" }} />
@@ -233,7 +238,7 @@ export default function SideBar(props) {
                             button
                             key="Logout"
                             component={Link}
-                            to="/"
+                            to="/logout"
                             onClick={handleClose}
                         >
                             <ListItemIcon className={classes.coloredText}>
