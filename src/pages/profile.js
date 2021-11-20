@@ -51,7 +51,7 @@ const Profile = () => {
         desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis pretium nulla nec velit eleifend dictum. Nunc dignissim purus vitae nunc posuere luctus. In pulvinar, erat nec tempor feugiat, ex quam fermentum nulla, sed facilisis felis felis ac mi. Cras convallis diam nec faucibus dignissim."
     }
 
-    const { user, isAuthenticated, isLoading } = useAuth0();
+    const { user } = useAuth0();
 
     return (
         <Box component="div" className={classes.BG} style={{ backgroundImage: `url( ${profile.background_pic} )` }}>

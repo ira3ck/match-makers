@@ -16,6 +16,7 @@ import PrivateRoute from "./components/session/PrivateRoute";
 import Logout from "./components/session/Logout";
 import Login from "./components/session/Login";
 import History from "./utils/History";
+import { Auth0Provider } from "@auth0/auth0-react";
 
 const theme = createTheme({
   palette: {
@@ -27,21 +28,23 @@ function App() {
   return (
     //<Welcome/>
     <ThemeProvider theme={theme}>
-      <Router history={History}>
-        <SideBar>
-          <Switch>
-            <PrivateRoute exact path="/" component={Index} />
-            <PrivateRoute exact path="/profile" component={Profile} />
-            <Route exact path="/sign-in" component={SignIn} />
-            <Route exact path="/sign-up" component={SignUp} />
-            <Route exact path="/squad" component={squad} />
-            <Route path="/login" component={Login} exact />
-            <Route path="/logout" component={Logout} exact />
-            <Route exact path="/preferences" component={Preferences} />
-            <Route exact path="/createSquad" component={createSquad} />
-          </Switch>
-        </SideBar>
-      </Router>
+      <Auth0Provider>
+        <Router history={History}>
+          <SideBar>
+            <Switch>
+              <PrivateRoute exact path="/" component={Index} />
+              <PrivateRoute exact path="/profile" component={Profile} />
+              <Route exact path="/sign-in" component={SignIn} />
+              <Route exact path="/sign-up" component={SignUp} />
+              <Route exact path="/squad" component={squad} />
+              <Route path="/login" component={Login} exact />
+              <Route path="/logout" component={Logout} exact />
+              <Route exact path="/preferences" component={Preferences} />
+              <Route exact path="/createSquad" component={createSquad} />
+            </Switch>
+          </SideBar>
+        </Router>
+      </Auth0Provider>
     </ThemeProvider>
   );
 }

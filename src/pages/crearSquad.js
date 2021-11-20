@@ -1,5 +1,5 @@
 import React, { Fragment, useState } from "react";
-import { Box, makeStyles } from "@material-ui/core";
+import { Box } from "@material-ui/core";
 
 import Button from "@material-ui/core/Button";
 
@@ -7,20 +7,7 @@ import TextField from "@material-ui/core/TextField";
 
 import Typography from "@material-ui/core/Typography";
 
-const useStyles = makeStyles((theme) => ({
-  espacio: {
-    marginTop: theme.spacing(3),
-  },
-  content: {
-    padding: theme.spacing(3),
-  },
-  input: {
-    display: "none",
-  },
-}));
-
 const CrearSquad = () => {
-  const classes = useStyles();
 
   const [squad, setSquad] = useState({
     squad_name: "",
@@ -37,10 +24,6 @@ const CrearSquad = () => {
       ...squad,
       [name]: value,
     });
-  };
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
   };
 
   return (

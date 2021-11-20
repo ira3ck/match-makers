@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import { makeStyles } from "@material-ui/core/styles";
 import Drawer from "@material-ui/core/Drawer";
 import CssBaseline from "@material-ui/core/CssBaseline";
@@ -66,7 +66,7 @@ const useStyles = makeStyles((theme) => ({
     },
 }));
 
-export default function SideBar(props) {
+const SideBar = (props) => {
     const classes = useStyles();
 
     const profile = {
@@ -88,8 +88,12 @@ export default function SideBar(props) {
     const open = Boolean(anchorEl);
     const id = open ? "simple-popover" : undefined;
 
-    const { user, isAuthenticated, isLoading } = useAuth0();
+    const { isLoading } = useAuth0();
 
+
+    if (isLoading === null) {
+        return <div>Loading ...</div>;
+    }
 
     return (
         <Box sx={{ display: "flex" }}>
@@ -247,3 +251,5 @@ export default function SideBar(props) {
         </Box>
     );
 }
+
+export default SideBar;

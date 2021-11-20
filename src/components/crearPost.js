@@ -9,7 +9,6 @@ import FormControl from "@material-ui/core/FormControl";
 import Select from "@material-ui/core/Select";
 
 import Typography from "@material-ui/core/Typography";
-import { PostAdd } from "@material-ui/icons";
 import Button from "@material-ui/core/Button";
 import Icon from "@material-ui/core/Icon";
 import { MakePosts } from "../api/MMapi";
@@ -36,7 +35,7 @@ const CrearPost = () => {
   };
   const classes = useStyles();
   
-  const { user, isAuthenticated, isLoading } = useAuth0();
+  const { user, isLoading } = useAuth0();
   
   const [post, setPost] = useState({
     creador: "",

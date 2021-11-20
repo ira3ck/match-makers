@@ -64,7 +64,7 @@ const Preferences = () => {
     const [usuarios, aqui] = useState([]);
 
     useEffect(() => {
-        async function getTheThing(){
+        async function getTheThing() {
             const userPref = await GetUsers();
             aqui(userPref)
         }
@@ -98,7 +98,7 @@ const Preferences = () => {
             [key]: event,
         }
         setUser(userModif);
-      };
+    };
 
     return (
         <form noValidate autoComplete="off" className={classes.content}>
@@ -107,11 +107,11 @@ const Preferences = () => {
             <Box className={classes.seccBox}>
                 <div className={classes.seccTitle}>Datos</div>
                 <FormControl fullWidth>
-                    <TextField id="username" label="Username" variant="outlined" name="username" className={classes.tField} onChange={handleChange}/>
+                    <TextField id="username" label="Username" variant="outlined" name="username" className={classes.tField} onChange={handleChange} />
                 </FormControl>
                 <FormControl fullWidth>
-                    <TextField id="name" label="Nombre(s)" variant="outlined" name="name" className={classes.tField} value={user.name}/>
-                    <TextField id="last-name" label="Apellido(s)" variant="outlined" name="last_name" className={classes.tField} value={user.last_name}/>
+                    <TextField id="name" label="Nombre(s)" variant="outlined" name="name" className={classes.tField} value={user.name} />
+                    <TextField id="last-name" label="Apellido(s)" variant="outlined" name="last_name" className={classes.tField} value={user.last_name} />
                 </FormControl>
             </Box>
 
