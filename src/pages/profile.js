@@ -34,15 +34,7 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 const Profile = () => {
-    const [User, setUser] = useState([])
-    useState(() => {
-        async function getPerfil(){
-            const perfilRes = await GetPerfil();
-            setUser(perfilRes)
-           
-        }
-        getPerfil()      
-    }, []);
+
 
     const classes = useStyles();
     const posteo = {

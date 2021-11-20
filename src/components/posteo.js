@@ -49,22 +49,22 @@ export default function RecipeReviewCard({posteo}) {
   return (
     <Card className={classes.content}>
       <Typography component="p" className={classes.gameData}>
-        {posteo.gameType}, {posteo.gameName}
+        MOBA, {posteo.juego}
       </Typography>
       <Typography component="p" className={classes.gameposteo}>
-        {posteo.date}
+        {posteo.fechaCreacion}
       </Typography>
       <CardHeader
         avatar={
-          <Avatar src={posteo.userIMG} />
+          <Avatar src="https://pbs.twimg.com/media/EiNYM5CWAAAh9PV?format=png&name=240x240" />
         }
-        title="Username"
-        subheader={<Typography className={classes.subColor}>{posteo.sqName}</Typography>}
+        title={posteo.creador}
+        subheader={<Typography className={classes.subColor}>Supermegasquad</Typography>}
         className={classes.cardHeder}
       />
       <CardContent>
         <Typography variant="body2" color="textPrimary" component="p">
-          {posteo.body}
+          {posteo.cuerpo}
         </Typography>
       </CardContent>
       <CardActions disableSpacing>
