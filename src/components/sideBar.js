@@ -20,12 +20,15 @@ import LogoIcon from "./LogoIcon";
 import {
   GroupOutlined,
   HomeOutlined,
+  MoreHoriz,
   PersonOutlined,
   PowerSettingsNew,
   Settings,
 } from "@material-ui/icons";
 
-const drawerWidth = 260;
+import { create } from "../api/MMapi";
+
+const drawerWidth = 360;
 
 const RegularFunction = async () => {
   const TestObj = {
@@ -185,6 +188,9 @@ export default function SideBar(props) {
                     {profile.squad}
                   </Typography>
                 </Grid>
+                <Grid>
+                  <MoreHoriz style={{ marginLeft: "25px" }} />
+                </Grid>
               </Grid>
             </ListItem>
           </Grid>
@@ -217,6 +223,7 @@ export default function SideBar(props) {
               key="Preferences"
               component={Link}
               to="/preferences"
+              onClick={handleClose}
             >
               <ListItemIcon className={classes.coloredText}>
                 <Settings />
@@ -227,7 +234,13 @@ export default function SideBar(props) {
               />
             </ListItem>
             <Divider />
-            <ListItem button key="Logout" component={Link} to="/">
+            <ListItem
+              button
+              key="Logout"
+              component={Link}
+              to="/"
+              onClick={handleClose}
+            >
               <ListItemIcon className={classes.coloredText}>
                 <PowerSettingsNew />
               </ListItemIcon>
