@@ -9,12 +9,7 @@ import ListItemText from '@material-ui/core/ListItemText';
 import { Link } from 'react-router-dom';
 import { Avatar, Box, Divider, Grid, Paper, Popover, Typography } from '@material-ui/core';
 import LogoIcon from './LogoIcon';
-<<<<<<< HEAD
 import { GroupOutlined, HomeOutlined, MoreHoriz, PersonOutlined, PowerSettingsNew, Settings } from '@material-ui/icons';
-=======
-
-import { GroupOutlined, HomeOutlined, PersonOutlined, PowerSettingsNew, Settings } from '@material-ui/icons';
->>>>>>> c60067c8622a0f76e97f0c90149436ff9cb49680
 
 
 import { create } from '../api/MMapi';
