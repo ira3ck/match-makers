@@ -44,8 +44,6 @@ const Index = () => {
                     <FilterBar></FilterBar>
                     {allPosts.map((item, index)=>(
                        // posteo.gameName = item.juego
-                        
-
                         <div className={classes.espacio}>
                             <Posteo posteo={item}></Posteo>
                         </div>

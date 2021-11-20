@@ -13,6 +13,8 @@ import { PostAdd } from "@material-ui/icons";
 import Button from "@material-ui/core/Button";
 import Icon from "@material-ui/core/Icon";
 import { MakePosts } from "../api/MMapi";
+import { useAuth0 } from "../hooks/react-auth0-spa";
+
 const useStyles = makeStyles((theme) => ({
   formControl: {
     margin: theme.spacing(1),
@@ -28,18 +30,23 @@ const useStyles = makeStyles((theme) => ({
 
 const CrearPost = () => {
   const  RegularFunction =  async (postSend)=>{
+    postSend.creador = user.nickname;
+    postSend.picture = user.picture;
     await MakePosts(postSend)
   };
   const classes = useStyles();
-
+  
+  const { user, isAuthenticated, isLoading } = useAuth0();
+  
   const [post, setPost] = useState({
     creador: "",
     permanencia: "",
     juego: "",
     cuerpo: "",
-    categoria: ""
+    categoria: "",
+    picture: ""
   });
-
+  
   const handleChange = (e) => {
     const { name, value } = e.target;
     setPost({
@@ -47,22 +54,26 @@ const CrearPost = () => {
       [name]: value,
     });
   };
-
+  
   const handleSubmit = (e) => {
     e.preventDefault();
-
+    
     RegularFunction(post)
   };
-
+  
+  if (isLoading) {
+    return <div>Loading ...</div>;
+  }
+  
   return (
     <div
-      style={{
-        width: "100%",
-        margin: "1.2%",
-        borderRadius: "10px",
-        padding: "15px",
-        alignContent: "center",
-      }}
+    style={{
+      width: "100%",
+      margin: "1.2%",
+      borderRadius: "10px",
+      padding: "15px",
+      alignContent: "center",
+    }}
     >
       <form onSubmit={handleSubmit}>
         <Box display="flex" p={1}>
@@ -71,18 +82,6 @@ const CrearPost = () => {
               <Typography variant="h3" gutterBottom>
                 Crear Post
               </Typography>
-            </Box>
-            <Box>
-            <TextField
-                style={{ width: "30%" }}
-                id="filled-textarea"
-                name="creador"
-                label="In Game Name"
-                required
-                placeholder="ej. MomoZV"
-                value={post.creador}
-                onChange={handleChange}
-              />
             </Box>
             <Box>
             

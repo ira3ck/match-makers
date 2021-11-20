@@ -44,19 +44,24 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-export default function RecipeReviewCard({posteo}) {
+export default function RecipeReviewCard({ posteo }) {
   const classes = useStyles();
+  let fecha = new Date();
+  fecha = posteo.fechaCreacion;
+  fecha = fecha.toLocaleString('%d-%b-%Y');
+
+
   return (
     <Card className={classes.content}>
       <Typography component="p" className={classes.gameData}>
-      {posteo.categoria}, {posteo.juego}
+        {posteo.categoria}, {posteo.juego}
       </Typography>
       <Typography component="p" className={classes.gameposteo}>
-        {posteo.fechaCreacion}
+        {fecha}
       </Typography>
       <CardHeader
         avatar={
-          <Avatar src="https://pbs.twimg.com/media/EiNYM5CWAAAh9PV?format=png&name=240x240" />
+          <Avatar src={posteo.picture} />
         }
         title={posteo.creador}
         subheader={<Typography className={classes.subColor}>Supermegasquad</Typography>}
@@ -69,10 +74,10 @@ export default function RecipeReviewCard({posteo}) {
       </CardContent>
       <CardActions disableSpacing>
         <IconButton aria-label="add to favorites">
-          <FavoriteIcon className={classes.iconBTN}/>
+          <FavoriteIcon className={classes.iconBTN} />
         </IconButton>
         <IconButton aria-label="share">
-          <ShareIcon  className={classes.iconBTN}/>
+          <ShareIcon className={classes.iconBTN} />
         </IconButton>
       </CardActions>
     </Card>
