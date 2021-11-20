@@ -4,8 +4,13 @@ import CardProfile from '../components/cardProfile';
 import VideoGameCard from '../components/cardVideoGame';
 import Posteo from '../components/posteo';
 import Scrollable from '../components/Scrollable';
+import { GetPerfil } from '../api/MMapi';
+import {useState} from 'react';
+import {useEffect} from 'react';
+
 
 const useStyles = makeStyles((theme) => ({
+
     alineadoDerecha: {
         display: 'flex',
         justifyContent: 'flex-end',
@@ -29,6 +34,15 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 const Profile = () => {
+    const [User, setUser] = useState([])
+    useState(() => {
+        async function getPerfil(){
+            const perfilRes = await GetPerfil();
+            setUser(perfilRes)
+           
+        }
+        getPerfil()      
+    }, []);
 
     const classes = useStyles();
     const posteo = {
