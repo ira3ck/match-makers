@@ -25,7 +25,7 @@ import {
     PowerSettingsNew,
     Settings,
 } from "@material-ui/icons";
-import { useAuth0 } from "../hooks/react-auth0-spa"
+import { useAuth0 } from "../hooks/react-auth0-spa";
 
 
 const drawerWidth = 360;

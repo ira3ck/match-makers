@@ -43,7 +43,7 @@ export default function CardProfile({data}) {
                             vertical: 'bottom',
                             horizontal: 'left',
                         }}>
-                        <Avatar alt="Profile Pic" src={data.profile_pic} className={classes.large} />
+                        <Avatar alt="Profile Pic" src={data.picture} className={classes.large} />
                     </Badge>
                 </Grid>
 
@@ -57,7 +57,7 @@ export default function CardProfile({data}) {
                     <Grid item
                         justifyContent="flex-end">
                         <Typography variant="h3">
-                            {data.name}
+                            {data.nickname}
                         </Typography>
                     </Grid>
                     <Grid item>
