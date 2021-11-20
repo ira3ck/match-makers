@@ -4,8 +4,13 @@ import CardProfile from '../components/cardProfile';
 import VideoGameCard from '../components/cardVideoGame';
 import Posteo from '../components/posteo';
 import Scrollable from '../components/Scrollable';
+import { GetPerfil } from '../api/MMapi';
+import {useState} from 'react';
+import {useEffect} from 'react';
+
 
 const useStyles = makeStyles((theme) => ({
+
     alineadoDerecha: {
         display: 'flex',
         justifyContent: 'flex-end',
@@ -29,6 +34,15 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 const Profile = () => {
+    const [User, setUser] = useState([])
+    useState(() => {
+        async function getPerfil(){
+            const perfilRes = await GetPerfil();
+            setUser(perfilRes)
+           
+        }
+        getPerfil()      
+    }, []);
 
     const classes = useStyles();
     const posteo = {
@@ -41,7 +55,7 @@ const Profile = () => {
     }
     const profile = {
         profile_pic: "../img/654978.jpg",
-        background_pic: "../img/k4ymjhphg9f71.png",
+        background_pic: "../img/bgDEFAULT.png",
         name: "ira3ck",
         squad_name: "Supermegasquad",
         desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis pretium nulla nec velit eleifend dictum. Nunc dignissim purus vitae nunc posuere luctus. In pulvinar, erat nec tempor feugiat, ex quam fermentum nulla, sed facilisis felis felis ac mi. Cras convallis diam nec faucibus dignissim."

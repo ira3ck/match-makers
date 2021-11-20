@@ -44,7 +44,6 @@ const useStyles = makeStyles((theme) => ({
     color: 'aliceblue',
   },
   squadIMG: {
-    backgroundImage: "url(../img/Spirited-away-ogino-chihiro-studio-ghibli-1920x1080-wallpaper.jpg)",
     backgroundPosition: 'center',
     backgroundRepeat: 'no - repeat',
     backgroundSize: 'cover',

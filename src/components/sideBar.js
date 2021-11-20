@@ -9,9 +9,18 @@ import ListItemText from '@material-ui/core/ListItemText';
 import { Link } from 'react-router-dom';
 import { Avatar, Box, Divider, Grid, Paper, Popover, Typography } from '@material-ui/core';
 import LogoIcon from './LogoIcon';
-import { GroupOutlined, HomeOutlined, PersonOutlined, PowerSettingsNew, Settings } from '@material-ui/icons';
+import { GroupOutlined, HomeOutlined, MoreHoriz, PersonOutlined, PowerSettingsNew, Settings } from '@material-ui/icons';
+
+
+import { create } from '../api/MMapi';
 
 const drawerWidth = 360;
+
+const  RegularFunction =  async ()=>{
+    const TestObj = { name:"KEK", last_name: "ZV", username:"MomoZV", email:"momo@gmail.com"};
+
+    await create(TestObj);
+};
 
 const useStyles = makeStyles((theme) => ({
     root: {
@@ -41,7 +50,7 @@ const useStyles = makeStyles((theme) => ({
     content: {
         backgroundColor: theme.palette.background.default,
     },
-    paperOptions:{
+    paperOptions: {
         backgroundColor: '#000',
         boxShadow: '0 10px 20px aliceblue',
         WebkitBoxShadow: '0 10px 20px aliceblue',
@@ -128,6 +137,9 @@ export default function SideBar(props) {
                                     <Typography style={{ marginLeft: "15px" }}>{profile.name}</Typography>
                                     <Typography style={{ marginLeft: "15px", fontSize: 'small' }}>{profile.squad}</Typography>
                                 </Grid>
+                                <Grid>
+                                    <MoreHoriz style={{marginLeft: '25px'}}/>
+                                </Grid>
                             </Grid>
                         </ListItem>
                     </Grid>
@@ -153,17 +165,17 @@ export default function SideBar(props) {
                     vertical: 'bottom',
                     horizontal: 'right',
                 }}
-                
+
             >
                 <Paper className={classes.paperOptions}>
                     <List>
-                        <ListItem button key='Preferences' component={Link} to='/preferences'>
+                        <ListItem button key='Preferences' component={Link} to='/preferences' onClick={handleClose}>
                             <ListItemIcon className={classes.coloredText}><Settings /></ListItemIcon>
                             <ListItemText className={classes.coloredText} primary='Preferencias' />
                         </ListItem>
                         <Divider />
-                        <ListItem button key='Logout' component={Link} to='/'>
-                            <ListItemIcon className={classes.coloredText}><PowerSettingsNew/></ListItemIcon>
+                        <ListItem button key='Logout' component={Link} to='/' onClick={handleClose}>
+                            <ListItemIcon className={classes.coloredText}><PowerSettingsNew /></ListItemIcon>
                             <ListItemText className={classes.coloredText} primary='Cerrar sesión' />
                         </ListItem>
                     </List>

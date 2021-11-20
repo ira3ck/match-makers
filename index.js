@@ -7,7 +7,7 @@ const preferences_router = require("./src/routes/preferencesRouter");
 const rateUser_router = require("./src/routes/rateUserRouter");
 
 const app = express();
-const port = 3000; // 5000 // 5001;
+const port = 3000; //  // 5001;
 
 app.use(bodyParser.json());
 app.use("/api", preferences_router);
