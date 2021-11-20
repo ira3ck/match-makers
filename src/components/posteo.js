@@ -49,7 +49,7 @@ export default function RecipeReviewCard({posteo}) {
   return (
     <Card className={classes.content}>
       <Typography component="p" className={classes.gameData}>
-        MOBA, {posteo.juego}
+      {posteo.categoria}, {posteo.juego}
       </Typography>
       <Typography component="p" className={classes.gameposteo}>
         {posteo.fechaCreacion}
