@@ -43,7 +43,7 @@ export default function CardProfile({data}) {
                             vertical: 'bottom',
                             horizontal: 'left',
                         }}>
-                        <Avatar alt="Invitado" src={data.profile_pic} className={classes.large} />
+                        <Avatar alt="Profile Pic" src={data.profile_pic} className={classes.large} />
                     </Badge>
                 </Grid>
 

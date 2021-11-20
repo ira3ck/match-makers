@@ -1,5 +1,5 @@
 import { Avatar, Box, Chip, Grid, makeStyles, Typography } from '@material-ui/core';
-import React, { Fragment } from 'react'
+import React from 'react';
 import CardProfile from '../components/cardProfile';
 import VideoGameCard from '../components/cardVideoGame';
 import Posteo from '../components/posteo';
@@ -48,7 +48,6 @@ const Profile = () => {
     }
     return (
         <Box component="div" className={classes.BG} style={{ backgroundImage: `url( ${profile.background_pic} )` }}>
-            <Fragment>
                 <Box component="div" className={classes.content}>
                     <CardProfile data={profile}></CardProfile>
 
@@ -90,7 +89,6 @@ const Profile = () => {
                         </Grid>
                     </Grid>
                 </Box>
-            </Fragment>
         </Box >
     )
 }

@@ -7,6 +7,7 @@ import SignIn from "./pages/sign-in";
 import SignUp from "./pages/sign-up";
 import squad from "./pages/squad";
 import SideBar from "./components/sideBar";
+import Preferences from "./pages/preferences";
 import { ThemeProvider } from "@material-ui/styles";
 import { createTheme } from "@material-ui/core";
 
@@ -28,6 +29,7 @@ function App() {
             <Route exact path="/sign-in" component={SignIn} />
             <Route exact path="/sign-up" component={SignUp} />
             <Route exact path="/squad" component={squad} />
+            <Route exact path="/preferences" component={Preferences} />
           </Switch>
         </SideBar>
       </Router>
