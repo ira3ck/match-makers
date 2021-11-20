@@ -33,10 +33,11 @@ const CrearPost = () => {
   const classes = useStyles();
 
   const [post, setPost] = useState({
-    creador: "Usuario equis",
+    creador: "",
     permanencia: "",
     juego: "",
     cuerpo: "",
+    categoria: ""
   });
 
   const handleChange = (e) => {
@@ -71,8 +72,20 @@ const CrearPost = () => {
                 Crear Post
               </Typography>
             </Box>
-
             <Box>
+            <TextField
+                style={{ width: "30%" }}
+                id="filled-textarea"
+                name="creador"
+                label="In Game Name"
+                required
+                placeholder="ej. MomoZV"
+                value={post.creador}
+                onChange={handleChange}
+              />
+            </Box>
+            <Box>
+            
               <FormControl className={classes.formControl}>
                 <InputLabel id="selectJuego-label">Juego</InputLabel>
                 <Select
@@ -86,8 +99,34 @@ const CrearPost = () => {
                   <MenuItem value={"Apex Legends"}>Apex Legends</MenuItem>
                   <MenuItem value={"Rocket league"}>Rocket League</MenuItem>
                   <MenuItem value={"Warzone"}>Warzone</MenuItem>
+                  <MenuItem value={"Valorant"}>Valorant</MenuItem>
+                  <MenuItem value={"League of Legends"}>League of Legends</MenuItem>
+                  <MenuItem value={"Team Fight Tactics"}>Team Fight Tactics</MenuItem>
+                  <MenuItem value={"Fortnite"}>Fortnite</MenuItem>
+                  <MenuItem value={"Among Us"}>Among Us</MenuItem>
                 </Select>
               </FormControl>
+
+              <FormControl className={classes.formControl}>
+                <InputLabel id="selectJuego-label">Categoría</InputLabel>
+                <Select
+                  name="categoria"
+                  labelId="selectCategoria-label"
+                  id="selectCategoria"
+                  required
+                  value={post.categoria}
+                  onChange={handleChange}
+                >
+                  <MenuItem value={"Moba"}>Moba</MenuItem>
+                  <MenuItem value={"First Person Shooter"}>First Person Shooter</MenuItem>
+                  <MenuItem value={"Estrategia"}>Estrategia</MenuItem>
+                  <MenuItem value={"Player vs. Player"}>Player vs. Player</MenuItem>
+                  <MenuItem value={"Cooperativo"}>Cooperativo</MenuItem>
+                  <MenuItem value={"Battle Royale"}>Battle Royale</MenuItem>
+                </Select>
+               
+              </FormControl>
+              
             </Box>
           </Box>
 
@@ -120,6 +159,7 @@ const CrearPost = () => {
             onChange={handleChange}
             variant="filled"
           />
+          
         </Box>
 
         <Box display="flex" flexDirection="row-reverse" m={1}>
