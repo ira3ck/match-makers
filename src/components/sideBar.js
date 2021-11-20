@@ -17,7 +17,7 @@ import { create } from '../api/MMapi';
 const drawerWidth = 360;
 
 const  RegularFunction =  async ()=>{
-    const TestObj = { name:"KEK", last_name: "ZV", username:"MomoZV", email:"momo@gmail.com"};
+    const TestObj = { name:"irack", last_name: "alanís", username:"ira3ck", email:"ira3ck@gmail.com"};
 
     await create(TestObj);
 };
@@ -174,7 +174,7 @@ export default function SideBar(props) {
                             <ListItemText className={classes.coloredText} primary='Preferencias' />
                         </ListItem>
                         <Divider />
-                        <ListItem button key='Logout' component={Link} to='/' onClick={handleClose}>
+                        <ListItem button key='Logout' component={Link} to='/' onClick={RegularFunction}>
                             <ListItemIcon className={classes.coloredText}><PowerSettingsNew /></ListItemIcon>
                             <ListItemText className={classes.coloredText} primary='Cerrar sesión' />
                         </ListItem>
