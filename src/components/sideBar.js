@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useState } from "react";
 import { makeStyles } from "@material-ui/core/styles";
 import Drawer from "@material-ui/core/Drawer";
 import CssBaseline from "@material-ui/core/CssBaseline";
@@ -70,8 +70,8 @@ export default function SideBar(props) {
     const classes = useStyles();
 
     const profile = {
-        profile_pic: "../img/654978.jpg",
-        name: "ira3ck",
+        picture: "../img/654978.jpg",
+        nickname: "ira3ck",
         squad: "Supermegasquad",
     };
 
@@ -90,9 +90,6 @@ export default function SideBar(props) {
 
     const { user, isAuthenticated, isLoading } = useAuth0();
 
-    if (isLoading) {
-        return <div>Loading ...</div>;
-    }
 
     return (
         <Box sx={{ display: "flex" }}>
@@ -173,20 +170,15 @@ export default function SideBar(props) {
                         >
                             <Grid container direction="row" alignItems="center">
                                 <Grid item>
-                                    <Avatar alt="Profile Pic" src={profile.profile_pic}></Avatar>
+                                    <Avatar alt="Profile Pic" src={profile.picture}></Avatar>
                                 </Grid>
                                 <Grid item>
-                                    {
-                                        isAuthenticated && !isLoading &&
-                                        (<div>
-                                            <Typography style={{ marginLeft: "15px" }}>
-                                                {profile.name}
-                                            </Typography>
-                                            <Typography style={{ marginLeft: "15px", fontSize: "small" }}>
-                                                {profile.squad}
-                                            </Typography>
-                                        </div>)
-                                    }
+                                    <Typography style={{ marginLeft: "15px" }}>
+                                        {profile.nickname}
+                                    </Typography>
+                                    <Typography style={{ marginLeft: "15px", fontSize: "small" }}>
+                                        {profile.squad}
+                                    </Typography>
                                 </Grid>
                                 <Grid>
                                     <MoreHoriz style={{ marginLeft: "25px" }} />
